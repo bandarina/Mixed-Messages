@@ -1,0 +1,83 @@
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+body{
+    background-color:  #8F00FF;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1{
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 40%;
+}
+
+#chatbot{
+    margin-top: 20%;
+    margin-bottom: 10%;
+    width: 25%;
+    height: auto;
+}
+
+section{
+    height: 60%;
+    width: 100%;
+    background-color: white;
+    border: 1px solid white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+    h1{
+        font-size: 1.4em;
+    }
+
+    .message-area{
+        height: 80%;
+        width: 100%;
+
+    }
+
+    .input-area{
+        height: 20%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    textarea{
+        width: 75%;
+        height: 80%;
+        resize: none;
+    }
+    button{
+        height: 50px;
+        width: 50px;
+        border: 1px solid gray;
+        border-radius: 50px;
+        background-color: transparent;
+    }
+    button:active{
+        background-color: lightblue;
+    }
+
+}
