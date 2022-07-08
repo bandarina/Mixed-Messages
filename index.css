@@ -25,12 +25,21 @@ header{
     align-items: center;
     height: 40%;
 }
-
+@keyframes float {
+    from { transform: translateY(0px)}
+    50% {transform: translateY(20px)}
+    to { transform: translateY(0px)}
+    
+}
 #chatbot{
-    margin-top: 20%;
+    margin-top: 5%;
     margin-bottom: 10%;
     width: 25%;
     height: auto;
+    max-width: 215px;
+    animation-name: float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
 
 section{
@@ -44,40 +53,181 @@ section{
 
 
 
-@media only screen and (max-width: 500px) {
+
+h1{
+    font-size: 1.4em;
+}
+
+.message-area{
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+
+}
+
+.input-area{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+textarea{
+    width: 75%;
+    height: 80%;
+    resize: none;
+}
+button{
+    height: 50px;
+    width: 50px;
+    border: 1px solid gray;
+    border-radius: 50px;
+    background-color: transparent;
+}
+button:active{
+    background-color: lightblue;
+}
+
+.dot-flashing {
+    position: relative;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: .5s;
+  }
+  
+  .dot-flashing::before, .dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot-flashing::before {
+    left: -10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 0s;
+  }
+  
+  .dot-flashing::after {
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 1s;
+  }
+  
+  @keyframes dotFlashing {
+    0% {
+      background-color: #9880ff;
+    }
+    50%,
+    100% {
+      background-color: #ebe6ff;
+    }
+  }
+
+.computer-message {
+    width: fit-content;
+    margin: 9% 0 0 7%;
+    border-radius: 15px;
+    background: #E14659;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    font-weight: 400;
+    font-family: helvetica;
+    position: relative;
+  }
+
+
+
+.computer-message:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid #E14659;
+    border-top: 15px solid #E14659;
+    border-bottom: 15px solid transparent;
+    left: -16px;
+    top: 0px;
+  }
+
+.user-message {
+    width: fit-content;
+    margin: 9% 7% 0 auto;
+    border-radius: 15px;
+    background: blue;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    font-weight: 400;
+    font-family: helvetica;
+    position: relative;
+}
+
+.user-message:before {
+content: "";
+width: 0px;
+height: 0px;
+position: absolute;
+border-left: 15px solid blue;
+border-right: 15px solid transparent;
+border-top: 15px solid blue;
+border-bottom: 15px solid transparent;
+right: -16px;
+top: 0px;
+}
+
+
+
+@media screen and (min-width: 540px){
+    h1{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 750px){
+    #chatbot{
+        margin-top: 10px;
+        width: 70%;
+
+    }
 
     h1{
-        font-size: 1.4em;
+        font-size: 2em;
     }
 
-    .message-area{
-        height: 80%;
-        width: 100%;
-
-    }
-
-    .input-area{
-        height: 20%;
-        width: 100%;
+    body{
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-around;
     }
-
+    section{
+        width: 70%;
+    }
     textarea{
-        width: 75%;
-        height: 80%;
-        resize: none;
-    }
-    button{
-        height: 50px;
-        width: 50px;
-        border: 1px solid gray;
-        border-radius: 50px;
-        background-color: transparent;
-    }
-    button:active{
-        background-color: lightblue;
+        width: 85%;
     }
 
+    .user-message{
+        margin-top: 5%;
+    }
+    .computer-message{
+        margin-top: 5%;
+    }
 }
