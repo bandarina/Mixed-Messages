@@ -24,7 +24,7 @@ function readAnswer(){
             typeMessage(response.description);
     })
 	.catch(err => console.error(err));
-    
+
         }
     })
 }
@@ -75,7 +75,7 @@ function typeMessage(text){
         messageArea.scrollTo(0, messageArea.scrollHeight);
     }, 3000)
 
-    
+    messageArea.scrollTo(0, messageArea.scrollHeight)
 }
 
 function welcomeMessage(){
