@@ -23,6 +23,12 @@ function readAnswer(){
 	        .then(response => {
             typeMessage(response.description);
     })
+    .then(()=>{
+        setTimeout(()=>{
+            typeMessage('Type another zodiac sign.');
+        }, 3000);
+        
+    })
 	.catch(err => console.error(err));
 
         }
